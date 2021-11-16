@@ -1,6 +1,4 @@
-package com.aakash.training;
-
-import org.springframework.context.annotation.Primary;
+package com.aakash.training.model;
 
 import javax.persistence.*;
 

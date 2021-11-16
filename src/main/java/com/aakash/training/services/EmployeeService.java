@@ -1,5 +1,6 @@
-package com.aakash.training;
+package com.aakash.training.services;
 
+import com.aakash.training.model.Employee;
 import com.aakash.training.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

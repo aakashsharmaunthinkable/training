@@ -1,10 +1,10 @@
-package com.aakash.training;
+package com.aakash.training.controller;
 
-import com.aakash.training.repository.EmployeeRepository;
+import com.aakash.training.model.Employee;
+import com.aakash.training.services.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
