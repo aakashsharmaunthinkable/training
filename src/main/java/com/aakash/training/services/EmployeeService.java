@@ -34,8 +34,11 @@ public class EmployeeService {
 
     public void updateEmployee(Employee emp, long id) {
         emp.setId(id);
-        System.out.println("()()()() -> " + emp.toString());
         employeeRepository.save(emp);
+    }
+
+    public List<Employee> findEmployeesByDepartment(long id) {
+        return employeeRepository.findByDepartment_Id(id);
     }
 
 }

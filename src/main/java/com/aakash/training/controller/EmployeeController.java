@@ -28,6 +28,11 @@ public class EmployeeController {
         return employeeService.getEmployee(id);
     }
 
+    @RequestMapping(value = "/departments/{id}/employees")
+    public List<Employee> getEmployeesFromDepartment(@PathVariable long id) {
+        return employeeService.findEmployeesByDepartment(id);
+    }
+
     @RequestMapping(value = "/employees/{id}", method = RequestMethod.DELETE)
     public Employee deleteEmployee(@PathVariable long id) {
         return employeeService.deleteEmployee(id);
