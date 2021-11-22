@@ -82,6 +82,10 @@ public class Employee {
         this.mobile = mobile;
     }
 
+    public void setDepartment(Department department) {
+        this.department = department;
+    }
+
     @Override
     public String toString() {
         return "Employee{" +
@@ -89,6 +93,7 @@ public class Employee {
                 ", name='" + name + '\'' +
                 ", address='" + address + '\'' +
                 ", mobile='" + mobile + '\'' +
+                ", department=" + department.getName() +
                 '}';
     }
 }
