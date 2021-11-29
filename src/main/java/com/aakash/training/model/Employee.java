@@ -1,6 +1,10 @@
 package com.aakash.training.model;
 
+import net.bytebuddy.asm.Advice;
+
 import javax.persistence.*;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "emp", schema = "emp")
@@ -11,12 +15,14 @@ public class Employee {
     private long id;
 
     @Column(name = "name", nullable = false)
+    @Size(max = 20, message = "Name longer than acceptable value")
     private String name;
 
     @Column(name = "address", nullable = false)
     private String address;
 
     @Column(name = "mobile", nullable = false)
+    @Pattern(regexp = "(^$|[0-9]){10}", message = "Phone number longer than expected")
     private String mobile;
 
     public Department getDepartment() {

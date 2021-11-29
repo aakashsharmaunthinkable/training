@@ -5,6 +5,7 @@ import com.aakash.training.services.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -14,7 +15,7 @@ public class EmployeeController {
     private EmployeeService employeeService;
 
     @RequestMapping(value = "/employees", method = RequestMethod.POST)
-    public Employee addEmployee(@RequestBody Employee employee) {
+    public Employee addEmployee(@Valid @RequestBody Employee employee) {
         return employeeService.addEmployee(employee);
     }
 
@@ -28,7 +29,7 @@ public class EmployeeController {
         return employeeService.getEmployee(id);
     }
 
-    @RequestMapping(value = "/departments/{id}/employees")
+    @RequestMapping(value = "/departments/{id}/employees", method = RequestMethod.GET)
     public List<Employee> getEmployeesFromDepartment(@PathVariable long id) {
         return employeeService.findEmployeesByDepartment(id);
     }
@@ -42,5 +43,7 @@ public class EmployeeController {
     public void updateEmployee(@RequestBody Employee employee, @PathVariable long id) {
         employeeService.updateEmployee(employee, id);
     }
+
+
 
 }
