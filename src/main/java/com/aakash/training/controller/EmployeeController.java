@@ -34,6 +34,16 @@ public class EmployeeController {
         return employeeService.findEmployeesByDepartment(id);
     }
 
+    @RequestMapping(value = "/employees/names/{name}", method = RequestMethod.GET)
+    public List<Employee> getEmployeeWithName(@PathVariable String name) {
+        return employeeService.findEmployeeByName(name);
+    }
+
+    @RequestMapping(value = "/employees/address/{address}", method = RequestMethod.GET)
+    public List<Employee> getEmployeeWithAddress(@PathVariable String address) {
+        return employeeService.findEmployeeByAddress(address);
+    }
+
     @RequestMapping(value = "/employees/{id}", method = RequestMethod.DELETE)
     public Employee deleteEmployee(@PathVariable long id) {
         return employeeService.deleteEmployee(id);
@@ -43,7 +53,5 @@ public class EmployeeController {
     public void updateEmployee(@RequestBody Employee employee, @PathVariable long id) {
         employeeService.updateEmployee(employee, id);
     }
-
-
 
 }

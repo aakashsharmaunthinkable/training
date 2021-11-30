@@ -41,4 +41,12 @@ public class EmployeeService {
         return employeeRepository.findByDepartment_Id(id);
     }
 
+    public List<Employee> findEmployeeByName(String name) {
+        return employeeRepository.findEmployeeByName(name);
+    }
+
+    public List<Employee> findEmployeeByAddress(String address) {
+        return employeeRepository.findEmployeeByAddress(address);
+    }
+
 }

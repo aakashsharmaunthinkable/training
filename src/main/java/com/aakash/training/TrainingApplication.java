@@ -9,7 +9,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableAutoConfiguration
 @EnableJpaRepositories(basePackages = "com.aakash.training")
 @SpringBootApplication
-@EnableSwagger2
 public class TrainingApplication {
 
 	public static void main(String[] args) {
